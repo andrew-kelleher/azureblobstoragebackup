@@ -51,6 +51,10 @@ else
     Write-Host "AzCopy found, skipping download."
 }
 
+# Set env values for AzCopy
+$env:AZCOPY_LOG_LOCATION = $env:temp+'\.azcopy'
+$env:AZCOPY_JOB_PLAN_LOCATION = $env:temp+'\.azcopy'
+
 # Run AzCopy from source blob to destination file share
 
 Write-Host "Backing up storage account..."
